@@ -3,16 +3,23 @@ defmodule ProtocolExp do
   Documentation for ProtocolExp.
   """
 
-  @doc """
-  Hello world.
+  def main do
 
-  ## Examples
 
-      iex> ProtocolExp.hello
-      :world
+    # Concept:
+    # Find the protocol implementation by dynamically creating structure based on arg
+    #
+    # This succesfully create a struct based on a dynamic
+    # name stored as string: `dynamic`
+    #
+    #    [dynamic] |> Module.concat() |> struct()
+    #
 
-  """
-  def hello do
-    :world
+
+    Map.from_struct
+    
+
+
+
   end
 end

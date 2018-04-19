@@ -16,8 +16,7 @@ defmodule ProtocolExp do
     #
 
 
-    Map.from_struct
-    
+    IO.puts "hello ttest"
 
 
 

@@ -1,12 +1,7 @@
 defmodule ProtocolExp do
   alias ProtocolExp.GreetingsGenerator
-  @moduledoc """
-  Documentation for ProtocolExp.
-  """
 
   def main do
-
-
     # Concept:
     # Find the protocol implementation by dynamically creating structure based on arg
     #
@@ -16,11 +11,24 @@ defmodule ProtocolExp do
     #    [dynamic] |> Module.concat() |> struct()
     #
 
-    %GreetingsGenerator.Java{name_to_greet: "frank"}
-    |> GreetingsGenerator.generate_greetings_file()
-    |> IO.inspect
-    IO.puts "hello ttest"
+    language_name = "java"
+    name_to_greet = "frank"
 
+    language_name
+    |> to_module()
+    |> apply(:generate_greetings_file, [name_to_greet])
+    |> IO.inspect
 
   end
+
+  defp to_module(language_name) do
+    module_name =
+      language_name
+      |> String.trim()
+      |> String.capitalize()
+
+    Module.concat(GreetingsGenerator, module_name)
+  end
+
+
 end

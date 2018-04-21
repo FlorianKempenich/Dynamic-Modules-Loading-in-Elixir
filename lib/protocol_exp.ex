@@ -1,4 +1,5 @@
 defmodule ProtocolExp do
+  alias ProtocolExp.GreetingsGenerator
   @moduledoc """
   Documentation for ProtocolExp.
   """
@@ -15,9 +16,10 @@ defmodule ProtocolExp do
     #    [dynamic] |> Module.concat() |> struct()
     #
 
-
+    %GreetingsGenerator.Java{name_to_greet: "frank"}
+    |> GreetingsGenerator.generate_greetings_file()
+    |> IO.inspect
     IO.puts "hello ttest"
-
 
 
   end

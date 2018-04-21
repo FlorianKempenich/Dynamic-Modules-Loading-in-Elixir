@@ -1,9 +1,9 @@
 defmodule DynamicModulesLoading.GreetingsGenerator.Python do
   @behaviour DynamicModulesLoading.GreetingsGenerator
 
-  def generate_greetings_file(name_to_greet) do
+  def generate_greetings_file(ready_to_print_greeting) do
     """
-    print("Hello #{name_to_greet}")
+    print("#{ready_to_print_greeting}")
     """
   end
 

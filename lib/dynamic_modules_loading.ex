@@ -27,18 +27,20 @@ defmodule DynamicModulesLoading do
   """
 
   defmodule GreetingsGenerator do
-    @type name_to_greet :: String.t
+    @type ready_to_print_greeting :: String.t
     @type greetings_file :: String.t
-    @callback generate_greetings_file(name_to_greet) :: greetings_file
+    @callback generate_greetings_file(ready_to_print_greeting) :: greetings_file
   end
 
 
   alias DynamicModulesLoading.GreetingsGenerator
   def generate_greetings_file(language_name, name_to_greet) do
+    ready_to_print_greeting = "Hello #{String.capitalize name_to_greet}!"
+
     language_name
     |> to_module()
     |> ensure_implemented(language_name)
-    |> apply(:generate_greetings_file, [name_to_greet])
+    |> apply(:generate_greetings_file, [ready_to_print_greeting])
     |> save_to_file()
   end
 

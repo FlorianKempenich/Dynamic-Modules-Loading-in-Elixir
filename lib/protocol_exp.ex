@@ -1,7 +1,7 @@
 defmodule ProtocolExp do
   alias ProtocolExp.GreetingsGenerator
 
-  def main do
+  def main(args \\ []) do
     # Concept:
     # Find the protocol implementation by dynamically creating structure based on arg
     #
@@ -14,10 +14,11 @@ defmodule ProtocolExp do
     language_name = "java"
     name_to_greet = "frank"
 
+    IO.inspect args
     language_name
     |> to_module()
     |> apply(:generate_greetings_file, [name_to_greet])
-    |> IO.inspect
+    |> IO.puts
 
   end
 

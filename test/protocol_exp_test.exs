@@ -1,8 +1,8 @@
-defmodule ProtocolExpTest do
+defmodule DynamicModulesLoadingTest do
   use ExUnit.Case
 
   test "run sandbox" do
-    ProtocolExp.main()
+    # DynamicModulesLoading.main()
   end
 
 end

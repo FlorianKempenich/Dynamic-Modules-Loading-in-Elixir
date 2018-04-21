@@ -1,5 +1,5 @@
-defmodule ProtocolExp.GreetingsGenerator.Java do
-  alias ProtocolExp.GreetingsGenerator
+defmodule DynamicModulesLoading.GreetingsGenerator.Java do
+  alias DynamicModulesLoading.GreetingsGenerator
 
   @behaviour GreetingsGenerator
 
